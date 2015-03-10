@@ -1,0 +1,120 @@
+
+@mixin trans($time) {
+	-webkit-transition: all $time ease;
+     -moz-transition: all $time ease;
+       -o-transition: all $time ease;   
+      -ms-transition: all $time ease;
+          transition: all $time ease;
+}
+@mixin transDelay($time) {
+	-webkit-transition-delay: $time;
+     -moz-transition-delay: $time;
+       -o-transition-delay: $time;
+          transition-delay: $time;
+}
+@mixin tranSpec($object,$time) {
+	-webkit-transition: $object $time ease;
+     -moz-transition: $object $time ease;
+       -o-transition: $object $time ease;   
+      -ms-transition: $object $time ease;
+          transition: $object $time ease;
+}
+@mixin tranSpec2($object,$time,$object2,$time2) {
+	-webkit-transition: $object $time ease, $object2 $time2 ease;
+     -moz-transition: $object $time ease, $object2 $time2 ease;
+       -o-transition: $object $time ease, $object2 $time2 ease;
+      -ms-transition: $object $time ease, $object2 $time2 ease;
+          transition: $object $time ease, $object2 $time2 ease;
+}
+@mixin tranSpec3($object,$time,$object2,$time2,$object3,$time3) {
+	-webkit-transition: $object $time ease, $object2 $time2 ease, $object3 $time3 ease;
+     -moz-transition: $object $time ease, $object2 $time2 ease, $object3 $time3 ease;
+       -o-transition: $object $time ease, $object2 $time2 ease, $object3 $time3 ease; 
+      -ms-transition: $object $time ease, $object2 $time2 ease, $object3 $time3 ease;
+          transition: $object $time ease, $object2 $time2 ease, $object3 $time3 ease;
+}
+@mixin cubic-trans($duration) {
+  -webkit-transition: all $duration cubic-bezier(0.575, 0.165, 0.000, 1.000);
+     -moz-transition: all $duration cubic-bezier(0.575, 0.165, 0.000, 1.000);
+       -o-transition: all $duration cubic-bezier(0.575, 0.165, 0.000, 1.000);
+          transition: all $duration cubic-bezier(0.575, 0.165, 0.000, 1.000);
+}
+@mixin transform($transformation) {
+  -webkit-transform: $transformation;
+     -moz-transform: $transformation;
+      -ms-transform: $transformation;
+          transform: $transformation;
+}
+
+@mixin drop-shadow($opac) {
+	-webkit-box-shadow: 2px 3px 15px 0px rgba(0, 0, 0, $opac);
+	-moz-box-shadow:    2px 3px 15px 0px rgba(0, 0, 0, $opac);
+	box-shadow:         2px 3px 15px 0px rgba(0, 0, 0, $opac);
+}
+@mixin no-highlight {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+}
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	
+	
+}
+@mixin blur($amount) {
+	-webkit-filter: blur($amount);
+	   -moz-filter: blur($amount);
+	     -o-filter: blur($amount);
+	    -ms-filter: blur($amount);
+	        filter: blur($amount);
+
+	-webkit-transform: translate3d(0,0,0);
+	        transform: translate3d(0,0,0);
+}
+@mixin shadow-config() {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: inherit;
+  height: inherit;
+  z-index: -2;
+  border-radius: inherit;
+  pointer-events: none;
+  @include border-box;
+}
+@mixin nice-shadow {
+    display: block;
+    background-color: rgba(255,255,255,1);
+    //border: 1px #eee solid;
+    border-radius: 2px;
+    @include border-box;
+    &:before {
+        @include shadow-config;
+        -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+        -moz-box-shadow:    0 8px 17px 0 rgba(0, 0, 0, 0.2);
+        box-shadow:         0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    }
+    &:after {
+        @include shadow-config;
+        -webkit-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        -moz-box-shadow:    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow:         0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+@mixin no-select {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}
+
+
+

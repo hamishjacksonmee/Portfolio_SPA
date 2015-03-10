@@ -1,0 +1,158 @@
+.menu-wrap {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 300px;
+	right: -260px;
+	@include tranSpec(right, 300ms);
+	&.open {
+		right: 0;
+		.menu-tab {
+			border-right-color: black !important;
+		}
+		.menu-button span,
+		.menu-button span:before,
+		.menu-button span:after {
+			background: white;
+		}
+	}
+}
+.menu-tab-wrap {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	width: 40px;
+	.menu-tab {
+		position: absolute;
+		top: 50%;
+		margin-top: -45px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 45px 40px 45px 0;
+		border-color: transparent #ffffff transparent transparent;
+		@include tranSpec(border-color, 300ms);
+	}
+}
+.menu-content-wrap {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	width: 260px;
+	background-color: white;
+}
+
+$xChange: 0.4s; // -- shifting lines
+$midX: 0.1s; // -- color
+$delay: 0.3s;
+
+// .menu-button-wrap {
+// 	position: relative;
+// 	margin: -5px 0px 0px 30px;
+// 	display: block;
+// 	width: 40px;
+// 	height: 40px;
+// }
+
+.toggle-menu {
+	position: absolute;
+	top: 50%;
+	right: 2px;
+	display: block;
+	z-index: 999;
+	height: 20px;
+	width: 20px;
+	padding-left: 2px;
+	padding-right: 4px;
+	margin-top: -14px;
+	padding-top: 11px;
+	@include trans(200ms);
+	cursor: pointer;
+	&:hover {
+		-moz-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		-o-transform: rotate(90deg);
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+		//margin-top: -17px;
+	}
+}
+
+.menu-button {
+	display: block;
+	font-size: 8px; /* change this */
+	padding-top: 0.2rem;
+	padding-right: 0.2rem;
+	padding-bottom: 0.2rem;
+	padding-left: 0.2rem;
+	width: 1rem;
+	height: auto;
+	@include no-highlight;
+	-webkit-tap-highlight-color: rgba(255,255,255,0.0);
+
+	-webkit-transition: width 100ms ease, padding 200ms ease;
+	-moz-transition: width 100ms ease, padding 200ms ease;
+	-o-transition: width 100ms ease, padding 200ms ease;
+	-ms-transition: width 100ms ease, padding 200ms ease;
+	transition: width 100ms ease, padding 200ms ease;
+
+}
+.menu-button span {
+	background: gray;
+	display: block;
+	position: relative;
+	-webkit-transform: translate3d(0,0,0);
+}
+.menu-button span,
+.menu-button span:before,
+.menu-button span:after {
+  	width: 100%;
+  	height: .05rem;
+ 	-webkit-transition: -webkit-transform $xChange ease, background $midX ease;
+	-moz-transition: transform $xChange ease, background $midX ease;
+	-o-transition: transform $xChange ease, background $midX ease;
+	-ms-transition: transform $xChange ease, background $midX ease;
+	transition: transform $xChange ease, background $midX ease;
+
+	-webkit-transition-delay: $delay;
+	-moz-transition-delay: $delay;
+	-o-transition-delay: $delay;
+	-ms-transition-delay: $delay;
+	transition-delay: $delay;
+
+  	-webkit-transform: translate3d(0,0,0);
+}
+.menu-button span:before,
+.menu-button span:after {
+  background: gray;
+  content: " ";
+  margin-top: -.3rem;
+  position: absolute;
+}
+.menu-button span:after {
+  margin-top: .3rem;
+}
+.toggle-menu.active {
+	.menu-button span {
+		background: transparent;
+	}
+}
+
+.toggle-menu.active {
+	.menu-button span:before {
+		-moz-transform: rotate(45deg) translate(.15rem, .3rem);
+		-ms-transform: rotate(45deg) translate(.15rem, .3rem);
+		-o-transform: rotate(45deg) translate(.15rem, .3rem);
+		-webkit-transform: rotate(45deg) translate(.15rem, .3rem);
+		transform: rotate(45deg) translate(.15rem, .3rem);
+	}
+}
+.toggle-menu.active {
+	.menu-button span:after {
+		-moz-transform: rotate(-45deg) translate(.15rem, -.3rem);
+		-ms-transform: rotate(-45deg) translate(.15rem, -.3rem);
+		-o-transform: rotate(-45deg) translate(.15rem, -.3rem);
+		-webkit-transform: rotate(-45deg) translate(.15rem, -.3rem);
+		transform: rotate(-45deg) translate(.15rem, -.3rem);
+	}
+}

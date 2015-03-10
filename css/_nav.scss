@@ -1,0 +1,131 @@
+.nav-wrap {
+	position: fixed;
+	width: 100px;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	padding: 2em 0 2em 2em;
+	display: block;
+	z-index: 10;
+	@include transform(translate3d(-100%,0,0));
+	-webkit-transform-style: preserve-3d;
+	//@include trans(500ms);
+	@include cubic-trans(600ms);
+	@include border-box;
+}
+
+.nav-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+	background: rgba(255,255,255,0.8);
+	@include border-box;
+
+	h1 {
+		font-style: italic;
+		line-height: 1.2;
+		color: #313131;
+		padding: 20px 0 0 20px;
+		opacity: 0;
+		white-space: nowrap;
+		@include trans(700ms);
+	}
+	img {
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		width: 23px;
+		height: auto;
+		@include trans(700ms);
+	}
+}
+.home-hit-area {
+	width: 100%;
+	height: 340px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 13;
+}
+
+.menu-button-wrap {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 60px;
+	height: 60px;
+	display: block;
+	margin: 0 0 20px 20px;
+	cursor: pointer;
+	overflow: hidden;
+	@include transform(rotate(-90deg));
+
+	span { // --- Middle line
+		position: relative;
+		display: block;
+		margin-top: 12px;
+		width: 40px;
+		height: 2px;
+		background-color: black;
+		z-index: 11;
+		@include cubic-trans(300ms);
+
+		&:before { // --- top line
+			content: " ";
+			position: absolute;
+			display: block;
+			top: -12px;
+			width: 50px;
+			height: 2px;
+			background-color: black;
+			@include cubic-trans(300ms);
+		}
+
+		&:after { // --- bottom line
+			content: " ";
+			position: absolute;
+			display: block;
+			top: 12px;
+			width: 30px;
+			height: 2px;
+			background-color: black;
+			@include cubic-trans(300ms);
+		}
+
+		&.button-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: pink;
+			z-index: 12;
+			@include transform(translate3d(-50px,0,0));
+			@include cubic-trans(300ms);
+
+			&:before {
+				background-color: pink;
+			}
+			&:after {
+				background-color: pink;
+			}
+		}
+	}
+
+	&:hover {
+		span {
+			@include transform(translate3d(10px,0,0));
+			&:before {
+				@include transform(translate3d(10px,0,0));
+				width: 30px;
+			}
+			&:after {
+				@include transform(translate3d(-10px,0,0));
+				width: 50px;
+			}
+			&.button-overlay {
+				@include transform(translate3d(10px,0,0));
+			}
+		}
+	}
+}
