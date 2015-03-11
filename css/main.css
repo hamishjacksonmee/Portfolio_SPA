@@ -444,7 +444,7 @@ a:hover, a:active, a:focus {
       -ms-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
     .global-wrapper.active .page-container.home .projects-container {
-      margin: 0 0 0 50%; }
+      margin: 0 0 0 48%; }
 
 .page-container {
   position: absolute;
@@ -605,12 +605,12 @@ a:hover, a:active, a:focus {
     -webkit-transform: rotate(360deg); } }
 .nav-wrap {
   position: fixed;
-  width: 100px;
+  width: 8em;
   overflow: hidden;
   top: 0;
   left: 0;
   bottom: 0;
-  padding: 2em 0 2em 2em;
+  padding: 2%;
   display: block;
   z-index: 10;
   -webkit-transform: translate3d(-100%, 0, 0);
@@ -631,15 +631,17 @@ a:hover, a:active, a:focus {
   width: 100%;
   height: 100%;
   display: block;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.5);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22), 0 14px 56px rgba(0, 0, 0, 0.25); }
   .nav-inner h1 {
     font-style: italic;
-    line-height: 1.2;
-    color: #313131;
-    padding: 20px 0 0 20px;
+    line-height: 1;
+    color: #fff;
+    padding: 15% 0 0 20px;
+    text-transform: uppercase;
     opacity: 0;
     white-space: nowrap;
     -webkit-transition: all 700ms ease;
@@ -772,7 +774,7 @@ body.home .nav-wrap {
   z-index: 9;
   position: relative;
   display: block;
-  width: 50%;
+  width: 52%;
   margin: 0 0 0 -50%;
   padding: 0;
   list-style: none;
@@ -792,7 +794,7 @@ body.home .nav-wrap {
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
     .projects-container li a {
-      background-color: red;
+      background-color: rgba(0, 0, 0, 0.6);
       display: block;
       height: 100%;
       width: 100%;
