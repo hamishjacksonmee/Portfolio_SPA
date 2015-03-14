@@ -3,7 +3,7 @@ $(document).ready(function(){
     // Initialize
 
     //startLoader();  // Initiates Preloader
-    
+
     setHeight();  // Sets objects to window height
     colorSet();   // Sets theme color
 
@@ -140,6 +140,13 @@ function colorSet(){
             break;
     };
 };
+
+
+// ---- Stop home menu going to top
+
+// $('.projects-container a').click(function(e) {
+//     e.preventDefault();
+// });
 
 
 // ---- Menu Button

@@ -1,11 +1,11 @@
 .nav-wrap {
 	position: fixed;
-	width: 8em;
-	overflow: hidden;
+	width: 6.2em;
+	//overflow: hidden;
 	top: 0;
 	left: 0;
 	bottom: 0;
-	padding: 2%;
+	padding: 2em 0 2em 2em;
 	display: block;
 	z-index: 10;
 	@include transform(translate3d(-100%,0,0));
@@ -21,6 +21,7 @@
 	height: 100%;
 	display: block;
 	background: rgba(255,255,255,0.5);
+	overflow: hidden;
 	@include border-box;
 	//@include nice-shadow;
 // 	-webkit-box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.5);
@@ -31,11 +32,11 @@
 		font-style: italic;
 		line-height: 1;
 		color: #fff;
-		padding: 15% 0 0 20px;
+		padding: 2em 0 0 20px;
 		text-transform: uppercase;
 		opacity: 0;
 		white-space: nowrap;
-		@include trans(700ms);
+		@include trans(600ms);
 	}
 	img {
 		position: absolute;
@@ -43,7 +44,7 @@
 		left: 20px;
 		width: 23px;
 		height: auto;
-		@include trans(700ms);
+		@include trans(600ms);
 	}
 }
 .home-hit-area {
