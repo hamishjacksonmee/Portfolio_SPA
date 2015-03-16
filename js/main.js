@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     // Click functionality
 
-    $('.enter-site-button').click(enterSite);
+    // $('.enter-site-button').click(enterSite);
 
 });
 
@@ -41,7 +41,6 @@ $(document).ready(function(){
 
 
 
-
 // ----- View Handling
 
 // -- home
@@ -64,6 +63,18 @@ app.page("symantis", function()
 
     };
 });
+// -- project2
+app.page("righttoretire", function() 
+{
+    // initialize view variables
+        
+    // present the view - load data and show: 
+    return function(params) {
+
+    };
+});
+
+
 
 // ----- Window Height Objects
 
@@ -72,13 +83,44 @@ function setHeight() {
     windowHeight = $(window).innerHeight();
 
     $('.full-height').css('height', windowHeight);
-    $('.m-height').css('min-height', windowHeight);
+    $('.min-full-height').css('min-height', windowHeight);
 
 };
   
 $(window).resize(function() {
     setHeight();
+    //heightBug();
 });
+
+// ----- Height bug being that the height of the global wrapper is set to window height and not the inner page height
+// ----- this sets the height of global wrapper to be the same as the body when on home page
+
+// heightBug();
+
+// function heightBug() {
+
+//     var body = $('body');
+//     var homePageHeight = $('#home').height();
+//     var siteWrap = $('.global-wrapper');
+
+//     if ( body.hasClass('home') ) {
+//         body.css( 'height', homePageHeight );
+//         siteWrap.css('height', '100%');
+//     } else {
+//         body.css( 'height', 'auto' );
+//         siteWrap.css('height', 'auto');
+//     };
+
+// };
+
+// ---- Stops home page jumping to top but also breaks navigation
+
+// $('.projects-container a').click(function(e) {
+//     e.preventDefault();
+//     // return false;
+// });
+
+
 
 
 // ----- Entering Site
@@ -141,12 +183,6 @@ function colorSet(){
     };
 };
 
-
-// ---- Stop home menu going to top
-
-// $('.projects-container a').click(function(e) {
-//     e.preventDefault();
-// });
 
 
 // ---- Menu Button
