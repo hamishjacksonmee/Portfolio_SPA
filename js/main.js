@@ -12,6 +12,8 @@ $(document).ready(function(){
 
     // $('.enter-site-button').click(enterSite);
 
+    routerInit();
+
 });
 
 
@@ -43,37 +45,69 @@ $(document).ready(function(){
 
 // ----- View Handling
 
-// -- home
-app.page("home", function() 
-{
-    // initialize view variables
-        
-    // present the view - load data and show: 
-    return function(params) {
+function routerInit() {
 
+    var homeInit = function () { 
+        $('body').removeClass('symantis righttoretire').addClass('home');
+        // setTimeout(function(){
+        //     $( '.global-wrapper' ).scrollTop( 300 );
+        //     console.log('TOP');
+        // }, 500);
     };
-});
-// -- project1
-app.page("symantis", function() 
-{
-    // initialize view variables
-        
-    // present the view - load data and show: 
-    return function(params) {
-
+    var symantisInit = function () { 
+        $('body').removeClass('home righttoretire').addClass('symantis');
+        // setTimeout(function(){
+        //     $( '.global-wrapper' ).scrollTop( 300 );
+        //     console.log('TOP');
+        // }, 500);
     };
-});
-// -- project2
-app.page("righttoretire", function() 
-{
-    // initialize view variables
-        
-    // present the view - load data and show: 
-    return function(params) {
-
+    var righttoretireInit = function () { 
+        $('body').removeClass('home symantis').addClass('righttoretire');
+        // setTimeout(function(){
+        //     $( '.global-wrapper' ).scrollTop( 300 );
+        //     console.log('TOP');
+        // }, 500);
     };
-});
 
+    // var scrollTop = function() {
+    //     setTimeout(function(){
+    //         $( '.global-wrapper' ).scrollTop( 300 );
+    //         console.log('TOP');
+    //     }, 1000);
+        
+    // };
+
+    //
+    // define the routing table.
+    //
+    var routes = {
+    '/home': homeInit,
+    '/symantis': symantisInit,
+    '/righttoretire': righttoretireInit
+    };
+
+    //
+    // instantiate the router.
+    //
+    var router = Router(routes);
+
+    //
+    // a global configuration setting.
+    //
+    // router.configure({
+    //     //on: scrollTop
+    //     //after: scrollTop
+    // });
+
+    router.init();
+
+};
+
+
+// $('.view').click(function(e){
+//   page('/user/12')
+//   e.preventDefault()
+// })
 
 
 // ----- Window Height Objects

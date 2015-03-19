@@ -437,6 +437,7 @@ a:hover, a:active, a:focus {
   background: linear-gradient(135deg, #ff6e00 0%, #ea4c88 45%, #4261ff 99%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6e00', endColorstr='#4261ff',GradientType=1 ); }
   .global-wrapper.active {
+    height: auto !important;
     overflow: auto; }
     .global-wrapper.active .nav-wrap {
       -webkit-transform: translate3d(0, 0, 0);
