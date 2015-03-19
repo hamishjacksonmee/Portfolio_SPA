@@ -389,8 +389,11 @@ body.righttoretire #righttoretire {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  opacity: 1; }
+  transform: translate3d(0, 0, 0); }
+  body.home #home.viewing,
+  body.symantis #symantis.viewing,
+  body.righttoretire #righttoretire.viewing {
+    opacity: 1; }
 
 h1 {
   font-size: 4.5rem;

@@ -45,59 +45,58 @@ $(document).ready(function(){
 
 // ----- View Handling
 
+
+
+var homeInit = function () { 
+    $('body').removeClass('symantis righttoretire').addClass('home');
+
+    setTimeout(function(){
+        $('#home').addClass('viewing');
+    }, 700);
+};
+
+var symantisInit = function () { 
+    $('body').removeClass('home righttoretire').addClass('symantis');
+
+    setTimeout(function(){
+        $('#symantis').addClass('viewing');
+    }, 700);
+};
+
+var righttoretireInit = function () { 
+    $('body').removeClass('home symantis').addClass('righttoretire');
+    
+    setTimeout(function(){
+        $('#righttoretire').addClass('viewing');
+    }, 700);
+};
+
 function routerInit() {
 
-    var homeInit = function () { 
-        $('body').removeClass('symantis righttoretire').addClass('home');
-        // setTimeout(function(){
-        //     $( '.global-wrapper' ).scrollTop( 300 );
-        //     console.log('TOP');
-        // }, 500);
-    };
-    var symantisInit = function () { 
-        $('body').removeClass('home righttoretire').addClass('symantis');
-        // setTimeout(function(){
-        //     $( '.global-wrapper' ).scrollTop( 300 );
-        //     console.log('TOP');
-        // }, 500);
-    };
-    var righttoretireInit = function () { 
-        $('body').removeClass('home symantis').addClass('righttoretire');
-        // setTimeout(function(){
-        //     $( '.global-wrapper' ).scrollTop( 300 );
-        //     console.log('TOP');
-        // }, 500);
+    var wrapper = $('.global-wrapper');
+
+    var scrollTop = function () {
+        setTimeout(function(){
+            wrapper.animate( { scrollTop:0 }, 800, 'easeOutCubic');
+        }, 700);
     };
 
-    // var scrollTop = function() {
-    //     setTimeout(function(){
-    //         $( '.global-wrapper' ).scrollTop( 300 );
-    //         console.log('TOP');
-    //     }, 1000);
-        
-    // };
+    var notViewing = function () {
+        $('section').removeClass('viewing');
+    };
 
-    //
-    // define the routing table.
-    //
     var routes = {
-    '/home': homeInit,
-    '/symantis': symantisInit,
-    '/righttoretire': righttoretireInit
+        '/home': homeInit,
+        '/symantis': symantisInit,
+        '/righttoretire': righttoretireInit
     };
 
-    //
-    // instantiate the router.
-    //
     var router = Router(routes);
 
-    //
-    // a global configuration setting.
-    //
-    // router.configure({
-    //     //on: scrollTop
-    //     //after: scrollTop
-    // });
+    router.configure({
+        on: scrollTop,
+        after: notViewing
+    });
 
     router.init();
 
