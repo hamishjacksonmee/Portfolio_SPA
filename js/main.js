@@ -14,6 +14,39 @@ $(document).ready(function(){
 
     routerInit();
 
+
+    var scrollingScreen = false;
+    var top = 0; // when not in an iframe, can be replaced by $("body").scrollTop()
+    var elem = $("#home");
+    if (elem.hasClass ('viewing')) {
+        $('body').mousewheel(function(event, delta) {
+            if ( !scrollingScreen && elem.hasClass ('viewing') ) {
+                scrollingScreen = true; // Throttles the call
+                // Finds slide headers above/below the last scroll top
+                var candidates = $('.slide').filter(function() {
+                    if ( delta < 0 ) {
+                        return $(this).offset().top > top + 1;
+
+                    } else {
+                        return $(this).offset().top < top - 1;
+                    }
+                });
+                // If one of more are found, updates top
+                if ( candidates.length > 0 ) {
+                    if ( delta < 0 )
+                        top = candidates.first().offset().top;
+                    else if ( delta > 0 )
+                        top = candidates.last().offset().top;
+                }
+                // Performs an animated scroll to the right place
+                $('.global-wrapper').animate({ scrollTop:top }, 800, 'easeInOutQuint', function() {
+                    scrollingScreen = false; // Releases the throttle
+                });
+            }
+            return false; // Prevents default scrolling
+        });
+    };
+
 });
 
 
@@ -65,7 +98,7 @@ var symantisInit = function () {
 
 var righttoretireInit = function () { 
     $('body').removeClass('home symantis').addClass('righttoretire');
-    
+
     setTimeout(function(){
         $('#righttoretire').addClass('viewing');
     }, 700);
@@ -215,6 +248,7 @@ function colorSet(){
             break;
     };
 };
+
 
 
 
