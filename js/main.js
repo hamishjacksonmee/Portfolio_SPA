@@ -3,9 +3,9 @@ $(document).ready(function(){
     // Initialize
 
     startLoader();  // Initiates Preloader
-    setHeight();  // Sets objects to window height
-    colorSet();   // Sets theme color
-    routerInit(); // Initiate the router
+    setHeight();    // Sets objects to window height
+    colorSet();     // Sets theme color
+    routerInit();   // Initiate the router
 
     // Click functionality
 
@@ -15,7 +15,7 @@ $(document).ready(function(){
     // --- Home Slides
 
     var scrollingScreen = false;
-    $('#home').mousewheel(function(event, delta) {
+    $('#home, .nav-wrap').mousewheel(function(event, delta) {
         if ( !scrollingScreen ) {
             scrollingScreen = true; // Throttles the call
             var top = $("body").scrollTop() || // Chrome places overflow at body
@@ -45,6 +45,7 @@ $(document).ready(function(){
 });
 
 
+
 // ----- Preloader
 
 function startLoader() {
@@ -70,6 +71,7 @@ function startLoader() {
 };
 
 
+
 // ----- Entering Site
 
 function enterSite() {
@@ -86,39 +88,58 @@ function preloaderRemove() {
 };
 
 
+
 // ----- View Handling
 
 var homeInit = function () { 
-    $('body').removeClass('symantis righttoretire').addClass('home');
-
+    $('body').removeClass('symantis right-to-retire the-vital-bowl portfolio-2014 jabber-app ch_ch-employment').addClass('home');
     setTimeout(function(){
         $('#home').addClass('viewing');
-    }, 700);
+    }, 800);
 };
-
+var thevitalbowlInit = function () { 
+    $('body').removeClass('home right-to-retire symantis portfolio-2014 jabber-app ch_ch-employment').addClass('the-vital-bowl');
+    setTimeout(function(){
+        $('#the-vital-bowl').addClass('viewing');
+    }, 800);
+};
 var symantisInit = function () { 
-    $('body').removeClass('home righttoretire').addClass('symantis');
-
+    $('body').removeClass('home right-to-retire the-vital-bowl portfolio-2014 jabber-app ch_ch-employment').addClass('symantis');
     setTimeout(function(){
         $('#symantis').addClass('viewing');
-    }, 700);
+    }, 800);
 };
-
 var righttoretireInit = function () { 
-    $('body').removeClass('home symantis').addClass('righttoretire');
-
+    $('body').removeClass('home symantis the-vital-bowl portfolio-2014 jabber-app ch_ch-employment').addClass('right-to-retire');
     setTimeout(function(){
-        $('#righttoretire').addClass('viewing');
-    }, 900);
+        $('#right-to-retire').addClass('viewing');
+    }, 800);
+};
+var portfolio2014Init = function () { 
+    $('body').removeClass('home symantis the-vital-bowl right-to-retire jabber-app ch_ch-employment').addClass('portfolio-2014');
+    setTimeout(function(){
+        $('#portfolio-2014').addClass('viewing');
+    }, 800);
+};
+var jabberappInit = function () { 
+    $('body').removeClass('home symantis the-vital-bowl right-to-retire portfolio-2014 ch_ch-employment').addClass('jabber-app');
+    setTimeout(function(){
+        $('#jabber-app').addClass('viewing');
+    }, 800);
+};
+var chchemploymentInit = function () { 
+    $('body').removeClass('home symantis the-vital-bowl right-to-retire portfolio-2014 jabber-app').addClass('ch_ch-employment');
+    setTimeout(function(){
+        $('#ch_ch-employment').addClass('viewing');
+    }, 800);
 };
 
 function routerInit() {
 
-    var wrapper = $('body,html');
+    var wrapper = $('html, body');
 
     var scrollTop = function () {
         setTimeout(function(){
-            //wrapper.animate( { scrollTop:0 }, 700, 'easeOutCubic');
             wrapper.animate( { scrollTop:0 }, 10);
         }, 700);
     };
@@ -129,8 +150,12 @@ function routerInit() {
 
     var routes = {
         '/home': homeInit,
+        '/the-vital-bowl': thevitalbowlInit,
         '/symantis': symantisInit,
-        '/righttoretire': righttoretireInit
+        '/right-to-retire': righttoretireInit,
+        '/portfolio-2014': portfolio2014Init,
+        '/jabber-app': jabberappInit,
+        '/ch_ch-employment': chchemploymentInit
     };
 
     var router = Router(routes);
@@ -143,6 +168,7 @@ function routerInit() {
     router.init();
 
 };
+
 
 
 // ----- Window Height Objects
@@ -159,6 +185,7 @@ function setHeight() {
 $(window).resize(function() {
     setHeight();
 });
+
 
 
 // ------- Setting color theme
@@ -206,8 +233,6 @@ function colorSet(){
     };
 };
 
-
-// ---- Home slides 
 
 
 // ---- Menu Button

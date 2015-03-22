@@ -107,16 +107,16 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			background-color: pink;
+			background-color: white;
 			z-index: 12;
 			@include transform(translate(-50px,0));
 			@include cubic-trans(300ms);
 
 			&:before {
-				background-color: pink;
+				background-color: white;
 			}
 			&:after {
-				background-color: pink;
+				background-color: white;
 			}
 		}
 	}

@@ -13,8 +13,12 @@ body {
 }
 
 body.home #home,
+body.the-vital-bowl #the-vital-bowl,
 body.symantis #symantis,
-body.righttoretire #righttoretire { 
+body.right-to-retire #right-to-retire,
+body.portfolio-2014 #portfolio-2014,
+body.jabber-app #jabber-app,
+body.ch_ch-employment #ch_ch-employment { 
 	@include transform(translate(0,0));
 	display: block;
 	&.viewing {
@@ -84,7 +88,7 @@ a:hover, a:active, a:focus {
 	@include transform(translate3d(50px,0,0));
 
 	&.active {
-		height: auto !important;
+		//height: auto !important;
 		overflow-y: scroll;
 		opacity: 1;
 		@include transform(translate3d(0,0,0));
