@@ -4,15 +4,21 @@
 	//overflow: hidden;
 	top: 0;
 	left: 0;
-	bottom: 0;
+	//bottom: 0;
 	padding: 2em 0 2em 2em;
 	display: block;
 	z-index: 10;
-	@include transform(translate3d(-100%,0,0));
+	//@include transform(translate3d(-100%,0,0));
 	-webkit-transform-style: preserve-3d;
 	//@include trans(500ms);
+	@include transform(translate3d(150px,0,0));
+	opacity: 0;
 	@include cubic-trans(600ms);
 	@include border-box;
+	&.entered {
+		@include transform(translate3d(0,0,0));
+		opacity: 1;
+	}
 }
 
 .nav-inner {
@@ -23,9 +29,6 @@
 	background: rgba(255,255,255,0.5);
 	overflow: hidden;
 	@include border-box;
-	//@include nice-shadow;
-// 	-webkit-box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.5);
-// box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.5);
 	@include card(4);
 
 	h1 {
@@ -106,7 +109,7 @@
 			left: 0;
 			background-color: pink;
 			z-index: 12;
-			@include transform(translate3d(-50px,0,0));
+			@include transform(translate(-50px,0));
 			@include cubic-trans(300ms);
 
 			&:before {
@@ -120,17 +123,17 @@
 
 	&:hover {
 		span {
-			@include transform(translate3d(10px,0,0));
+			@include transform(translate(10px,0));
 			&:before {
-				@include transform(translate3d(10px,0,0));
+				@include transform(translate(10px,0));
 				width: 30px;
 			}
 			&:after {
-				@include transform(translate3d(-10px,0,0));
+				@include transform(translate(-10px,0));
 				width: 50px;
 			}
 			&.button-overlay {
-				@include transform(translate3d(10px,0,0));
+				@include transform(translate(10px,0));
 			}
 		}
 	}

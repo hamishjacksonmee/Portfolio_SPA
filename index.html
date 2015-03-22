@@ -30,7 +30,9 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- <div class="preloader full-height">
+        <div class="main-bg full-height"></div>
+
+        <div class="preloader full-height">
             <span class="loader-border"></span>
             <div class="loader-wrap">
                 <div class="loader-image">
@@ -40,26 +42,25 @@
                     <span class="enter-arrow icon-arrow-right"></span>
                 </a>
             </div>
-        </div> -->
+        </div>
+
+        <nav class="nav-wrap full-height">
+            <div class="nav-inner">
+                <a href="#/home" class="home-hit-area"></a>
+                <h1>Hamish<br />Jackson-<br />Mee</h1>
+                <img src="img/svg/vtitle.svg" />
+
+                <!-- ==== Menu doesn't work yet ==== -->
+                <a class="menu-button-wrap">
+                    <span></span>
+                    <span class="button-overlay"></span>
+                </a>
+            </div>
+        </nav>
 
 
-        <div class="global-wrapper active min-full-height"> 
-        <!-- Add class 'unloaded' and remove 'active' class when using preloader --> 
-        <!-- Add class full-height to stop ability to scroll on preloader -->
-
-            <nav class="nav-wrap">
-                <div class="nav-inner">
-                    <a href="#/home" class="home-hit-area"></a>
-                    <h1>Hamish<br />Jackson-<br />Mee</h1>
-                    <img src="img/svg/vtitle.svg" />
-
-                    <!-- ==== Menu doesn't work yet ==== -->
-                    <a class="menu-button-wrap">
-                        <span></span>
-                        <span class="button-overlay"></span>
-                    </a>
-                </div>
-            </nav>
+        <div class="global-wrapper full-height unloaded"> 
+        <!-- Add class 'unloaded' / 'full-height' and remove 'active' class when using preloader --> 
 
             <section id="home" class="page-container home viewing">
                 <ul class="projects-container">
@@ -111,55 +112,57 @@
 
             <!-- <section id="symantis" class="page-container min-full-height" src="pages/symantis.htm"></section>
             <section id="righttoretire" class="page-container min-full-height" src="pages/righttoretire.htm"></section> -->
-            <section id="symantis" class="page-container min-full-height">
-                <ul>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                </ul>
-
-                <h2><a href="#/home">back</a></h2>
+            <section id="symantis" class="page-container">
+                <div class="page-inner">
+                    <ul>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                    </ul>
+                    <h2><a href="#/home">back</a></h2>
+                </div>
             </section>
-            <section id="righttoretire" class="page-container min-full-height">
-                <ul>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                    <li><h1>Test list</h1></li>
-                </ul>
-
-                <h2><a href="#/home">back</a></h2>
+            <section id="righttoretire" class="page-container">
+                <div class="page-inner">
+                    <ul>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                        <li><h1>Test list</h1></li>
+                    </ul>
+                    <h2><a href="#/home">back</a></h2>
+                </div>
             </section>
 
 

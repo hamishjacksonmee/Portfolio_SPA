@@ -2,83 +2,111 @@ $(document).ready(function(){
 
     // Initialize
 
-    //startLoader();  // Initiates Preloader
-
+    startLoader();  // Initiates Preloader
     setHeight();  // Sets objects to window height
     colorSet();   // Sets theme color
-
+    routerInit(); // Initiate the router
 
     // Click functionality
 
-    // $('.enter-site-button').click(enterSite);
+    $('.enter-site-button').click(enterSite);
 
-    routerInit();
+    // $('body').mousewheel(function() {
+    //     homeSlides();
+    // });
+    // $('html').bind('mousewheel DOMMouseScroll', function (e) {
+    //     var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
 
-
-    var scrollingScreen = false;
-    var top = 0; // when not in an iframe, can be replaced by $("body").scrollTop()
-    var elem = $("#home");
-    if (elem.hasClass ('viewing')) {
-        $('body').mousewheel(function(event, delta) {
-            if ( !scrollingScreen && elem.hasClass ('viewing') ) {
-                scrollingScreen = true; // Throttles the call
-                // Finds slide headers above/below the last scroll top
-                var candidates = $('.slide').filter(function() {
-                    if ( delta < 0 ) {
-                        return $(this).offset().top > top + 1;
-
-                    } else {
-                        return $(this).offset().top < top - 1;
-                    }
-                });
-                // If one of more are found, updates top
-                if ( candidates.length > 0 ) {
-                    if ( delta < 0 )
-                        top = candidates.first().offset().top;
-                    else if ( delta > 0 )
-                        top = candidates.last().offset().top;
-                }
-                // Performs an animated scroll to the right place
-                $('.global-wrapper').animate({ scrollTop:top }, 800, 'easeInOutQuint', function() {
-                    scrollingScreen = false; // Releases the throttle
-                });
-            }
-            return false; // Prevents default scrolling
-        });
-    };
+    //     if (delta < 0) {
+    //         //console.log('You scrolled down');
+    //     } else if (delta > 0) {
+    //         //console.log('You scrolled up');
+    //     }
+    // });
 
 });
 
 
 // ----- Preloader
 
-// function startLoader() {
+function startLoader() {
 
-//     // Images will not begin downloading until we tell the loader to start. 
-//     var loader = new PxLoader(), 
-//         backgroundImg = loader.addImage('img/jpg/assasin.jpg'), 
-//         backgroundImgTwo = loader.addImage('img/jpg/city.jpg');
+    // Images will not begin downloading until we tell the loader to start. 
+    var loader = new PxLoader(), 
+        backgroundImg = loader.addImage('img/jpg/assasin.jpg'), 
+        backgroundImgTwo = loader.addImage('img/jpg/city.jpg');
      
-//     // callback that will be run once images are ready 
-//     loader.addCompletionListener(function() { 
+    // callback that will be run once images are ready 
+    loader.addCompletionListener(function() { 
 
-//         //setTimeout(function() {
-//             $('.global-wrapper.unloaded').removeClass('unloaded');
-//             $('.preloader').addClass('loaded');
-//             console.log("loaded");
-//         //}, 2000);
+        //setTimeout(function() {
+            $('.global-wrapper.unloaded').removeClass('unloaded');
+            $('.preloader').addClass('loaded');
+            console.log("loaded");
+        //}, 3000);
+        
+    });
+
+    loader.start();
+
+};
+
+
+// ----- Entering Site
+
+function enterSite() {
+    $('.global-wrapper').addClass('active');
+    $('.preloader').addClass('entered');
+    $('.nav-wrap').addClass('entered');
+    preloaderRemove();
+};
+
+function preloaderRemove() {
+    setTimeout(function() {
+        $('.preloader').remove();
+    }, 1000);
+};
+
+
+// --- Home Scroll Effect
+
+// $('body').mousewheel(function(event, delta) {
+
+//         //if (elem.hasClass ('viewing')) {
+
+//         var scrollingScreen = false;
+//         var top = 0; // when not in an iframe, can be replaced by $("body").scrollTop()
+//         if ( !scrollingScreen ) {
+//             scrollingScreen = true; // Throttles the call
+//             // Finds slide headers above/below the last scroll top
+//             var candidates = $('.slide').filter(function() {
+//                 if ( delta < 0 ) {
+//                     return $(this).offset().top > top + 1;
+
+//                 } else {
+//                     return $(this).offset().top < top - 1;
+//                 }
+//             });
+//             // If one of more are found, updates top
+//             if ( candidates.length > 0 ) {
+//                 if ( delta < 0 )
+//                     top = candidates.first().offset().top;
+//                 else if ( delta > 0 )
+//                     top = candidates.last().offset().top;
+//             }
+//             // Performs an animated scroll to the right place
+//             $('.global-wrapper').animate({ scrollTop:top }, 800, 'easeInOutQuint', function() {
+//                 scrollingScreen = false; // Releases the throttle
+//             });
+//         }
+//         return false; // Prevents default scrolling
+
+//         //};
         
 //     });
 
-//     loader.start();
-
-// };
-
-
 
 // ----- View Handling
-
-
 
 var homeInit = function () { 
     $('body').removeClass('symantis righttoretire').addClass('home');
@@ -101,16 +129,17 @@ var righttoretireInit = function () {
 
     setTimeout(function(){
         $('#righttoretire').addClass('viewing');
-    }, 700);
+    }, 900);
 };
 
 function routerInit() {
 
-    var wrapper = $('.global-wrapper');
+    var wrapper = $('body,html');
 
     var scrollTop = function () {
         setTimeout(function(){
-            wrapper.animate( { scrollTop:0 }, 800, 'easeOutCubic');
+            //wrapper.animate( { scrollTop:0 }, 700, 'easeOutCubic');
+            wrapper.animate( { scrollTop:0 }, 100);
         }, 700);
     };
 
@@ -136,12 +165,6 @@ function routerInit() {
 };
 
 
-// $('.view').click(function(e){
-//   page('/user/12')
-//   e.preventDefault()
-// })
-
-
 // ----- Window Height Objects
 
 function setHeight() {
@@ -155,53 +178,7 @@ function setHeight() {
   
 $(window).resize(function() {
     setHeight();
-    //heightBug();
 });
-
-// ----- Height bug being that the height of the global wrapper is set to window height and not the inner page height
-// ----- this sets the height of global wrapper to be the same as the body when on home page
-
-// heightBug();
-
-// function heightBug() {
-
-//     var body = $('body');
-//     var homePageHeight = $('#home').height();
-//     var siteWrap = $('.global-wrapper');
-
-//     if ( body.hasClass('home') ) {
-//         body.css( 'height', homePageHeight );
-//         siteWrap.css('height', '100%');
-//     } else {
-//         body.css( 'height', 'auto' );
-//         siteWrap.css('height', 'auto');
-//     };
-
-// };
-
-// ---- Stops home page jumping to top but also breaks navigation
-
-// $('.projects-container a').click(function(e) {
-//     e.preventDefault();
-//     // return false;
-// });
-
-
-
-
-// ----- Entering Site
-
-function enterSite() {
-    $('.global-wrapper').addClass('active');
-    $('.preloader').addClass('entered');
-    preloaderRemove();
-};
-
-function preloaderRemove() {
-    setTimeout(function() {
-        $('.preloader').remove();
-    }, 1000);
-};
 
 
 // ------- Setting color theme
@@ -250,6 +227,7 @@ function colorSet(){
 };
 
 
+// ---- Home slides 
 
 
 // ---- Menu Button
