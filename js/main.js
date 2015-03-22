@@ -139,7 +139,24 @@ function routerInit() {
     var scrollTop = function () {
         setTimeout(function(){
             //wrapper.animate( { scrollTop:0 }, 700, 'easeOutCubic');
-            wrapper.animate( { scrollTop:0 }, 100);
+            wrapper.animate( { scrollTop:0 }, 10);
+        //     var     scrollDuration = 10;
+        //     var     scrollHeight = window.scrollY,
+        //             scrollStep = Math.PI / ( scrollDuration / 15 ),
+        //             cosParameter = scrollHeight / 2;
+        //     var     scrollCount = 0,
+        //             scrollMargin;
+        //     requestAnimationFrame(step);        
+        //     function step () {
+        //         setTimeout(function() {
+        //             if ( window.scrollY != 0 ) {
+        //                     requestAnimationFrame(step);
+        //                 scrollCount = scrollCount + 1;  
+        //                 scrollMargin = cosParameter - cosParameter * Math.cos( scrollCount * scrollStep );
+        //                 window.scrollTo( 0, ( scrollHeight - scrollMargin ) );
+        //             }
+        //         }, 15 );
+        //     };
         }, 700);
     };
 

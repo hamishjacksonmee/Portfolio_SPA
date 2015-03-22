@@ -8,7 +8,7 @@ body {
 		@include transform(translate(-100%,0));
 		opacity: 0;
 		display: none;
-		@include cubic-trans(800ms);
+		@include trans(700ms);
 	}
 }
 
