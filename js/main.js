@@ -11,18 +11,36 @@ $(document).ready(function(){
 
     $('.enter-site-button').click(enterSite);
 
-    // $('body').mousewheel(function() {
-    //     homeSlides();
-    // });
-    // $('html').bind('mousewheel DOMMouseScroll', function (e) {
-    //     var delta = (e.originalEvent.wheelDelta || -e.originalEvent.detail);
 
-    //     if (delta < 0) {
-    //         //console.log('You scrolled down');
-    //     } else if (delta > 0) {
-    //         //console.log('You scrolled up');
-    //     }
-    // });
+    // --- Home Slides
+
+    var scrollingScreen = false;
+    $('#home').mousewheel(function(event, delta) {
+        if ( !scrollingScreen ) {
+            scrollingScreen = true; // Throttles the call
+            var top = $("body").scrollTop() || // Chrome places overflow at body
+                      $("html").scrollTop();   // Firefox places it at html
+            // Finds slide headers above/below the current scroll top
+            var candidates = $(".slide").filter(function() {
+                if ( delta < 0 )
+                    return $(this).offset().top > top + 1;
+                else
+                    return $(this).offset().top < top - 1;
+            });
+            // If one of more are found, updates top
+            if ( candidates.length > 0 ) {
+                if ( delta < 0 )
+                    top = candidates.first().offset().top;
+                else if ( delta > 0 )
+                    top = candidates.last().offset().top;
+            }
+            // Performs an animated scroll to the right place
+            $("html,body").animate({ scrollTop:top }, 800, "easeInOutQuint", function() {
+                scrollingScreen = false; // Releases the throttle
+            });
+        }
+        return false; // Prevents default scrolling
+    })
 
 });
 
@@ -68,44 +86,6 @@ function preloaderRemove() {
 };
 
 
-// --- Home Scroll Effect
-
-// $('body').mousewheel(function(event, delta) {
-
-//         //if (elem.hasClass ('viewing')) {
-
-//         var scrollingScreen = false;
-//         var top = 0; // when not in an iframe, can be replaced by $("body").scrollTop()
-//         if ( !scrollingScreen ) {
-//             scrollingScreen = true; // Throttles the call
-//             // Finds slide headers above/below the last scroll top
-//             var candidates = $('.slide').filter(function() {
-//                 if ( delta < 0 ) {
-//                     return $(this).offset().top > top + 1;
-
-//                 } else {
-//                     return $(this).offset().top < top - 1;
-//                 }
-//             });
-//             // If one of more are found, updates top
-//             if ( candidates.length > 0 ) {
-//                 if ( delta < 0 )
-//                     top = candidates.first().offset().top;
-//                 else if ( delta > 0 )
-//                     top = candidates.last().offset().top;
-//             }
-//             // Performs an animated scroll to the right place
-//             $('.global-wrapper').animate({ scrollTop:top }, 800, 'easeInOutQuint', function() {
-//                 scrollingScreen = false; // Releases the throttle
-//             });
-//         }
-//         return false; // Prevents default scrolling
-
-//         //};
-        
-//     });
-
-
 // ----- View Handling
 
 var homeInit = function () { 
@@ -140,23 +120,6 @@ function routerInit() {
         setTimeout(function(){
             //wrapper.animate( { scrollTop:0 }, 700, 'easeOutCubic');
             wrapper.animate( { scrollTop:0 }, 10);
-        //     var     scrollDuration = 10;
-        //     var     scrollHeight = window.scrollY,
-        //             scrollStep = Math.PI / ( scrollDuration / 15 ),
-        //             cosParameter = scrollHeight / 2;
-        //     var     scrollCount = 0,
-        //             scrollMargin;
-        //     requestAnimationFrame(step);        
-        //     function step () {
-        //         setTimeout(function() {
-        //             if ( window.scrollY != 0 ) {
-        //                     requestAnimationFrame(step);
-        //                 scrollCount = scrollCount + 1;  
-        //                 scrollMargin = cosParameter - cosParameter * Math.cos( scrollCount * scrollStep );
-        //                 window.scrollTo( 0, ( scrollHeight - scrollMargin ) );
-        //             }
-        //         }, 15 );
-        //     };
         }, 700);
     };
 
