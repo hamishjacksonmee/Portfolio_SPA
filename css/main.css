@@ -800,6 +800,34 @@ body.home .nav-wrap {
 .page-container.home {
   padding: 0; }
 
+.home-nav-up {
+  position: fixed;
+  top: 0.2em;
+  right: 1em;
+  font-size: 4em;
+  color: white;
+  cursor: pointer;
+  z-index: 99; }
+  .home-nav-up span {
+    padding: 0.1em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+
+.home-nav-down {
+  position: fixed;
+  bottom: 0.1em;
+  right: 1em;
+  font-size: 4em;
+  color: white;
+  cursor: pointer;
+  z-index: 99; }
+  .home-nav-down span {
+    padding: 0.1em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+
 .projects-container {
   z-index: 9;
   position: relative;

@@ -11,11 +11,35 @@ body.home {
 		}
 	}
 }
-
 .page-container.home {
 	padding: 0;
 }
-
+.home-nav-up {
+	position: fixed;
+	top: 0.2em;
+	right: 1em;
+	font-size: 4em;
+	color: white;
+	cursor: pointer;
+	z-index: 99;
+	span {
+		padding: 0.1em;
+		@include border-box;
+	}
+}
+.home-nav-down {
+	position: fixed;
+	bottom: 0.1em;
+	right: 1em;
+	font-size: 4em;
+	color: white;
+	cursor: pointer;
+	z-index: 99;
+	span {
+		padding: 0.1em;
+		@include border-box;
+	}
+}
 .projects-container {
 	z-index: 9;
 	position: relative;
