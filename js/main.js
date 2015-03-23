@@ -11,8 +11,15 @@ $(document).ready(function(){
 
     $('.enter-site-button').click(enterSite);
 
+    // Prevent scroll on preloader
 
-    // --- Home Slides
+    $( '#preloader' ).bind( 'mousewheel DOMMouseScroll', function ( e ) {
+        var e0 = e.originalEvent,
+            delta = e0.wheelDelta || -e0.detail;
+        e.preventDefault();
+    });
+
+    // Home Slides
 
     var scrollingScreen = false;
     $('#home, .nav-wrap').mousewheel(function(event, delta) {
@@ -58,11 +65,11 @@ function startLoader() {
     // callback that will be run once images are ready 
     loader.addCompletionListener(function() { 
 
-        //setTimeout(function() {
+        setTimeout(function() {
             $('.global-wrapper.unloaded').removeClass('unloaded');
             $('.preloader').addClass('loaded');
             console.log("loaded");
-        //}, 3000);
+        }, 3000);
         
     });
 
@@ -86,6 +93,13 @@ function preloaderRemove() {
         $('.preloader').remove();
     }, 1000);
 };
+
+// function preloaderScroll() {
+//     var elem = $('#preloader');
+//     var initHeight = elem.height();
+//     elem.css('height', initHeight * 1.1);
+//     console.log('scroll caught');
+// };
 
 
 

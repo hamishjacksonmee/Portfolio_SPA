@@ -57,12 +57,16 @@ a:hover, a:active, a:focus {
 	outline: 0;
 }
 
+.site-wrap {
+	width: 100%;
+	overflow-x: hidden;
+}
+
 .main-bg {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	display: block;
 	z-index: 1;
 	// placeholder gradient
 	background: #ff6e00;
@@ -79,18 +83,14 @@ a:hover, a:active, a:focus {
 .global-wrapper {
 	position: relative;
 	width: 100%;
-	display: block;
-	overflow: hidden;
 	z-index: 2;
 	opacity: 0;
 	@include trans(1s);
 	@include transDelay(500ms);
 	@include border-box;
-	@include transform(translate3d(50px,0,0));
+	@include transform(translate3d(0,100px,0));
 
 	&.active {
-		//height: auto !important;
-		overflow-y: scroll;
 		opacity: 1;
 		@include transform(translate3d(0,0,0));
 	}

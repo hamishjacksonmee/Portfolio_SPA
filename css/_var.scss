@@ -73,6 +73,13 @@
 	-webkit-transform: translate3d(0,0,0);
 	        transform: translate3d(0,0,0);
 }
+@mixin animation($properties) {
+    -webkit-animation: $properties;
+       -moz-animation: $properties;
+        -ms-animation: $properties;
+         -o-animation: $properties;
+            animation: $properties;
+}
 @mixin no-select {
     -webkit-touch-callout: none;
       -webkit-user-select: none;
