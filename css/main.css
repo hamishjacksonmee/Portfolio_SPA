@@ -530,10 +530,10 @@ a:hover, a:active, a:focus {
     transform: translate(0, 0);
     opacity: 1; }
   .preloader.entered {
-    -webkit-transform: translate(0, -10%, 0);
-    -moz-transform: translate(0, -10%, 0);
-    -ms-transform: translate(0, -10%, 0);
-    transform: translate(0, -10%, 0);
+    -webkit-transform: translate(0, -5%);
+    -moz-transform: translate(0, -5%);
+    -ms-transform: translate(0, -5%);
+    transform: translate(0, -5%);
     opacity: 0; }
 
 .loader-border {
@@ -714,10 +714,10 @@ a:hover, a:active, a:focus {
   display: block;
   z-index: 10;
   -webkit-transform-style: preserve-3d;
-  -webkit-transform: translate3d(0, 200px, 0);
-  -moz-transform: translate3d(0, 200px, 0);
-  -ms-transform: translate3d(0, 200px, 0);
-  transform: translate3d(0, 200px, 0);
+  -webkit-transform: translate3d(0, 300px, 0);
+  -moz-transform: translate3d(0, 300px, 0);
+  -ms-transform: translate3d(0, 300px, 0);
+  transform: translate3d(0, 300px, 0);
   opacity: 0;
   -webkit-transition: all 600ms cubic-bezier(0.575, 0.165, 0, 1);
   -moz-transition: all 600ms cubic-bezier(0.575, 0.165, 0, 1);
