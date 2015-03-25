@@ -10,6 +10,8 @@ $(document).ready(function(){
     // Click functionality
 
     $('.enter-site-button').click(enterSite);
+    $('.home-nav-down').click(homeScrollDown);
+    $('.home-nav-up').click(homeScrollUp);
 
     // Prevent scroll on preloader
 
@@ -19,16 +21,55 @@ $(document).ready(function(){
         e.preventDefault();
     });
 
+    // Home nav buttons
+
+    $('.slide-top').bind('inview', function(event, isInView) {
+        var wrapper = $('.global-wrapper');
+        if( wrapper.hasClass('active') ) {
+            if (isInView) {
+            // element is now visible in the viewport
+                $('.home-nav-up').removeClass('active');
+                setTimeout( function() {
+                    $('.home-nav-up').addClass('hidden');
+                }, 600);
+            } else {
+            // element has gone out of viewport
+                $('.home-nav-up').removeClass('hidden');
+                setTimeout( function() {
+                    $('.home-nav-up').addClass('active');
+                }, 600);
+            }
+        }
+    });
+    $('.slide-bottom').bind('inview', function(event, isInView) {
+        var wrapper = $('.global-wrapper');
+        if( wrapper.hasClass('active') ) {
+            if (isInView) {
+            // element is now visible in the viewport
+                $('.home-nav-down').removeClass('active');
+                setTimeout( function() {
+                    $('.home-nav-down').addClass('hidden');
+                }, 600);
+            } else {
+            // element has gone out of viewport
+                $('.home-nav-down').removeClass('hidden');
+                setTimeout( function() {
+                    $('.home-nav-down').addClass('active');
+                }, 600);
+            }
+        }
+    });
+
     // Home Slides
 
     var scrollingScreen = false;
     $('#home, .nav-wrap').mousewheel(function(event, delta) {
         if ( !scrollingScreen ) {
             scrollingScreen = true; // Throttles the call
-            var top = $("body").scrollTop() || // Chrome places overflow at body
-                      $("html").scrollTop();   // Firefox places it at html
+            var top = $('body').scrollTop() || // Chrome places overflow at body
+                      $('html').scrollTop();   // Firefox places it at html
             // Finds slide headers above/below the current scroll top
-            var candidates = $(".slide").filter(function() {
+            var candidates = $('.slide').filter(function() {
                 if ( delta < 0 )
                     return $(this).offset().top > top + 1;
                 else
@@ -42,7 +83,7 @@ $(document).ready(function(){
                     top = candidates.last().offset().top;
             }
             // Performs an animated scroll to the right place
-            $("html,body").animate({ scrollTop:top }, 800, "easeInOutQuint", function() {
+            $('html,body').animate({ scrollTop:top }, 800, 'easeInOutQuint', function() {
                 scrollingScreen = false; // Releases the throttle
             });
         }
@@ -65,11 +106,11 @@ function startLoader() {
     // callback that will be run once images are ready 
     loader.addCompletionListener(function() { 
 
-        setTimeout(function() {
+        //setTimeout(function() {
             $('.global-wrapper.unloaded').removeClass('unloaded');
             $('.preloader').addClass('loaded');
             console.log("loaded");
-        }, 3000);
+        //}, 3000);
         
     });
 
@@ -85,6 +126,14 @@ function enterSite() {
     $('.global-wrapper').addClass('active');
     $('.preloader').addClass('entered');
     $('.nav-wrap').addClass('entered');
+    //$('.home-nav-down').removeClass('hidden').addClass('active');
+    if( $('body').hasClass('home') ) {
+        $('.home-nav-down').removeClass('hidden');
+        setTimeout( function() {
+            $('.home-nav-down').addClass('active');
+        }, 600);
+    };
+    
     preloaderRemove();
 };
 
@@ -248,6 +297,29 @@ function colorSet(){
 };
 
 
+// ---- Home Nav
+
+function homeScrollDown() {
+
+    var y = $(window).scrollTop();  //your current y position on the page
+    windowHeight = $(window).innerHeight();
+
+    $('html,body').animate({ scrollTop: y + windowHeight }, 800, 'easeInOutQuint' );
+
+    // if( y < windowHeight) {
+    //     $('.home-nav-up').addClass('hidden');
+    // } else {
+    //     $('.home-nav-up').removeClass('hidden');
+    // };
+};
+function homeScrollUp() {
+
+    var y = $(window).scrollTop();  //your current y position on the page
+    windowHeight = $(window).innerHeight();
+
+    $('html,body').animate({ scrollTop: y - windowHeight }, 800, 'easeInOutQuint' );
+
+};
 
 // ---- Menu Button
 

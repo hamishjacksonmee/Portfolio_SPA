@@ -882,29 +882,51 @@ body.home .nav-wrap {
   position: fixed;
   top: 0.2em;
   right: 1em;
-  font-size: 4em;
+  font-size: 5em;
   color: white;
   cursor: pointer;
-  z-index: 99; }
+  z-index: 99;
+  opacity: 0;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  transition: all 600ms ease; }
   .home-nav-up span {
     padding: 0.1em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
+    .home-nav-up span:before {
+      position: relative;
+      top: 0; }
+  .home-nav-up.active {
+    opacity: 1; }
 
 .home-nav-down {
   position: fixed;
   bottom: 0.1em;
   right: 1em;
-  font-size: 4em;
+  font-size: 5em;
   color: white;
   cursor: pointer;
-  z-index: 99; }
+  z-index: 99;
+  opacity: 0;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  transition: all 600ms ease; }
   .home-nav-down span {
     padding: 0.1em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
+    .home-nav-down span:before {
+      position: relative;
+      bottom: -0.2em; }
+  .home-nav-down.active {
+    opacity: 1; }
 
 .projects-container {
   z-index: 9;
@@ -923,15 +945,88 @@ body.home .nav-wrap {
     width: 100%;
     padding: 4em 2em 4em 0;
     list-style: none;
+    overflow: hidden;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; }
     .projects-container li a {
-      background-color: rgba(0, 0, 0, 0.6);
       display: block;
       height: 100%;
       width: 100%;
-      position: relative; }
+      position: relative;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+      .projects-container li a:hover .home-list-bg span {
+        background-size: auto 110%; }
+      .projects-container li a:hover .home-list-inner {
+        background-color: rgba(0, 0, 0, 0.5); }
+
+.home-list-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 5px 5px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .home-list-bg span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background: url("../img/jpg/assasin.jpg") no-repeat center center;
+    background-size: auto 100%;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    transition: all 300ms ease; }
+
+.home-list-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 10px rgba(0, 0, 0, 0.5) solid;
+  border-right: 10px rgba(0, 0, 0, 0.5) solid;
+  border-bottom: 10px rgba(0, 0, 0, 0.5) solid;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  transition: all 300ms ease; }
+  .home-list-inner h3 {
+    font-style: italic;
+    font-size: 2em;
+    margin-top: 4em;
+    margin-bottom: 0;
+    white-space: nowrap;
+    color: white;
+    width: 100%;
+    text-align: right;
+    padding-right: 1em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+  .home-list-inner p {
+    font-style: normal;
+    font-size: 1.2em;
+    color: white;
+    width: 100%;
+    text-align: right;
+    padding-right: 1em;
+    font-weight: thinner;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
 
 .menu-wrap {
   position: absolute;
