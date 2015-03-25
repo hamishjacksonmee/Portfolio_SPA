@@ -94,6 +94,14 @@ body.home {
 				}
 				.home-list-inner {
 					background-color: rgba(0,0,0,0.5);
+					h3 {
+						@include transform(translate(0,0));
+						opacity: 1;
+					}
+					p {
+						@include transform(translate(0,0));
+						opacity: 1;
+					}
 				}
 			}
 		}
@@ -124,36 +132,48 @@ body.home {
 	left: 0;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 	background-color: rgba(0,0,0,0.2);
 	border-top: 10px rgba(0,0,0,0.5) solid;
 	border-right: 10px rgba(0,0,0,0.5) solid;
 	border-bottom: 10px rgba(0,0,0,0.5) solid;
 	@include border-box;
-	@include trans(300ms);
+	@include trans(400ms);
 
 	h3 {
 		font-style: italic;
 		font-size: 2em;
-		margin-top: 4em;
+		margin-top: 3.6em;
 		margin-bottom: 0;
 		white-space: nowrap;
 		color: white;
 		width: 100%;
 		text-align: right;
 		padding-right: 1em;
+		opacity: 0;
 		@include border-box;
+		@include no-highlight;
+		@include no-select;
+		@include transform(translate(10%,0));
+		@include cubic-trans(600ms);
 	}
 
 	p {
 		font-style: normal;
-		font-size: 1.2em;
-		//margin-top: 0.5em;
+		font-size: 1em;
+		margin-top: 0;
 		color: white;
 		width: 100%;
 		text-align: right;
-		padding-right: 1em;
-		font-weight: thinner;
+		padding-right: 2em;
+		font-weight: lighter;
+		opacity: 0;
 		@include border-box;
+		@include no-highlight;
+		@include no-select;
+		@include transform(translate(10%,0));
+		@include cubic-trans(600ms);
+		@include transDelay(50ms);
 	}
 }
 
