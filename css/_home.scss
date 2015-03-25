@@ -123,7 +123,7 @@ body.home {
 		opacity: 0.7;
 		background: url('../img/jpg/assasin.jpg') no-repeat center center;
 		background-size: auto 100%;
-		@include trans(300ms);
+		@include trans(600ms);
 	}
 }
 .home-list-inner {
@@ -138,7 +138,7 @@ body.home {
 	border-right: 10px rgba(0,0,0,0.5) solid;
 	border-bottom: 10px rgba(0,0,0,0.5) solid;
 	@include border-box;
-	@include trans(400ms);
+	@include trans(600ms);
 
 	h3 {
 		font-style: italic;
