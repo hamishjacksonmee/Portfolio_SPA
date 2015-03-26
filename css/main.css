@@ -954,6 +954,7 @@ body.home .nav-wrap {
       height: 100%;
       width: 100%;
       position: relative;
+      -webkit-backface-visibility: hidden;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box; }
@@ -995,7 +996,8 @@ body.home .nav-wrap {
     -moz-transition: all 600ms ease;
     -o-transition: all 600ms ease;
     -ms-transition: all 600ms ease;
-    transition: all 600ms ease; }
+    transition: all 600ms ease;
+    -webkit-transform-style: preserve-3d; }
 
 .home-list-inner {
   position: absolute;
@@ -1015,7 +1017,8 @@ body.home .nav-wrap {
   -moz-transition: all 600ms ease;
   -o-transition: all 600ms ease;
   -ms-transition: all 600ms ease;
-  transition: all 600ms ease; }
+  transition: all 600ms ease;
+  -webkit-transform-style: preserve-3d; }
   .home-list-inner h3 {
     font-style: italic;
     font-size: 2em;
@@ -1027,6 +1030,7 @@ body.home .nav-wrap {
     text-align: right;
     padding-right: 1em;
     opacity: 0;
+    -webkit-transform-style: preserve-3d;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1043,10 +1047,11 @@ body.home .nav-wrap {
     -moz-transform: translate(10%, 0);
     -ms-transform: translate(10%, 0);
     transform: translate(10%, 0);
-    -webkit-transition: all 600ms cubic-bezier(0.575, 0.165, 0, 1);
-    -moz-transition: all 600ms cubic-bezier(0.575, 0.165, 0, 1);
-    -o-transition: all 600ms cubic-bezier(0.575, 0.165, 0, 1);
-    transition: all 600ms cubic-bezier(0.575, 0.165, 0, 1); }
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    transition: all 600ms ease; }
   .home-list-inner p {
     font-style: normal;
     font-size: 1em;
@@ -1055,8 +1060,8 @@ body.home .nav-wrap {
     width: 100%;
     text-align: right;
     padding-right: 2em;
-    font-weight: lighter;
     opacity: 0;
+    -webkit-transform-style: preserve-3d;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1073,14 +1078,15 @@ body.home .nav-wrap {
     -moz-transform: translate(10%, 0);
     -ms-transform: translate(10%, 0);
     transform: translate(10%, 0);
-    -webkit-transition: all 600ms cubic-bezier(0.575, 0.165, 0, 1);
-    -moz-transition: all 600ms cubic-bezier(0.575, 0.165, 0, 1);
-    -o-transition: all 600ms cubic-bezier(0.575, 0.165, 0, 1);
-    transition: all 600ms cubic-bezier(0.575, 0.165, 0, 1);
-    -webkit-transition-delay: 50ms;
-    -moz-transition-delay: 50ms;
-    -o-transition-delay: 50ms;
-    transition-delay: 50ms; }
+    -webkit-transition: all 600ms ease;
+    -moz-transition: all 600ms ease;
+    -o-transition: all 600ms ease;
+    -ms-transition: all 600ms ease;
+    transition: all 600ms ease;
+    -webkit-transition-delay: 80ms;
+    -moz-transition-delay: 80ms;
+    -o-transition-delay: 80ms;
+    transition-delay: 80ms; }
 
 .menu-wrap {
   position: absolute;

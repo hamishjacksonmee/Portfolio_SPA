@@ -19,6 +19,13 @@
       -ms-transition: $object $time ease;
           transition: $object $time ease;
 }
+@mixin transProperty3($object,$object2,$object3) {
+  -webkit-transition-property: $object,$object2,$object3;
+     -moz-transition-property: $object,$object2,$object3;
+       -o-transition-property: $object,$object2,$object3;
+      -ms-transition-property: $object,$object2,$object3;
+          transition-property: $object,$object2,$object3;
+}
 @mixin tranSpec2($object,$time,$object2,$time2) {
 	-webkit-transition: $object $time ease, $object2 $time2 ease;
      -moz-transition: $object $time ease, $object2 $time2 ease;
