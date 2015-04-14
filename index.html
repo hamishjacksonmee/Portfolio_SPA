@@ -9,7 +9,6 @@
         <title>Hamish Jackson-Mee | Digital Designer</title>
         <meta name="description" content="Portfolio Site for Hamish Jackson-Mee. Interaction Designer, UI &amp; UX Designer, Digital Creative, Developer in progress.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="keywords" content="Jacksonmee, Jackson-Mee, Hamishjacksonmee, Hamish Jackson-Mee, itshamish.com, itshamish, its hamish, Hamish Portfolio, designer, freelance, web design, design, developer, web developer, interaction designer, freelancer, digital creative, usability, user experience, user interface, web, digital, interface designer, UI design, UX designer, NZ, Auckland, designer auckland, UX New Zealand">
         <meta name="author" content="Hamish Jackson-Mee">
@@ -35,7 +34,7 @@
             <div class="main-bg full-height">
             </div>
 
-            <div id="preloader" class="preloader full-height">
+            <!-- <div id="preloader" class="preloader full-height">
                 <span class="loader-border"></span>
                 <div class="loader-wrap">
                     <div class="loader-image">
@@ -45,9 +44,11 @@
                         <span class="enter-arrow icon-arrow-down"></span>
                     </a>
                 </div>
-            </div>
+            </div> -->
 
-            <nav class="nav-wrap full-height">
+            <nav class="nav-wrap full-height entered">
+            <!-- PRELOADER === Remove class 'entered' -->
+
                 <div class="nav-inner">
                     <a href="#/home" class="home-hit-area"></a>
                     <h1>Hamish<br />Jackson-<br />Mee</h1>
@@ -64,13 +65,14 @@
             <div class="home-nav-up hidden">
                 <span class="icon-arrow-up"></span>
             </div>
-            <div class="home-nav-down hidden">
+            <div class="home-nav-down active">
+                <!-- PRELOADER === remove class 'active' and add class 'hidden' -->
                 <span class="icon-arrow-down"></span>
             </div>
 
 
-            <div class="global-wrapper unloaded"> 
-            <!-- Add class 'unloaded' and remove 'active' class when using preloader --> 
+            <div class="global-wrapper active"> 
+            <!-- PRELOADER === add class 'unloaded' and remove 'active' class --> 
 
                 <section id="home" class="page-container home viewing">
                     <ul class="projects-container">
@@ -211,20 +213,21 @@
         </div>
 
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script> -->
+        <script src="js/vendor/jquery-1.11.1.min.js"></script>
         <script src="js/vendor/jquery-ui.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
         <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-51297480-1', 'itshamish.com');
-            ga('require','displayfeatures');
-            ga('send', 'pageview');
+            // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            // })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+            // ga('create', 'UA-51297480-1', 'itshamish.com');
+            // ga('require','displayfeatures');
+            // ga('send', 'pageview');
         </script>
 
     </body>

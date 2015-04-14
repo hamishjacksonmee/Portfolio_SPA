@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     // Initialize
 
-    startLoader();  // Initiates Preloader
+    // startLoader();  // Initiates Preloader
     setHeight();    // Sets objects to window height
     colorSet();     // Sets theme color
     routerInit();   // Initiate the router
@@ -96,27 +96,27 @@ $(document).ready(function(){
 
 // ----- Preloader
 
-function startLoader() {
+// function startLoader() {
 
-    // Images will not begin downloading until we tell the loader to start. 
-    var loader = new PxLoader(), 
-        backgroundImg = loader.addImage('img/jpg/assasin.jpg'), 
-        backgroundImgTwo = loader.addImage('img/jpg/city.jpg');
+//     // Images will not begin downloading until we tell the loader to start. 
+//     var loader = new PxLoader(), 
+//         backgroundImg = loader.addImage('img/jpg/assasin.jpg'), 
+//         backgroundImgTwo = loader.addImage('img/jpg/city.jpg');
      
-    // callback that will be run once images are ready 
-    loader.addCompletionListener(function() { 
+//     // callback that will be run once images are ready 
+//     loader.addCompletionListener(function() { 
 
-        //setTimeout(function() {
-            $('.global-wrapper.unloaded').removeClass('unloaded');
-            $('.preloader').addClass('loaded');
-            console.log("loaded");
-        //}, 3000);
+//         //setTimeout(function() {
+//             $('.global-wrapper.unloaded').removeClass('unloaded');
+//             $('.preloader').addClass('loaded');
+//             console.log("loaded");
+//         //}, 3000);
         
-    });
+//     });
 
-    loader.start();
+//     loader.start();
 
-};
+// };
 
 
 

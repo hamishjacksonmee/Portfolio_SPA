@@ -902,6 +902,11 @@ body.home .nav-wrap {
       top: 0; }
   .home-nav-up.active {
     opacity: 1; }
+  .home-nav-up:hover {
+    -webkit-transform: translate(0, -1em);
+    -moz-transform: translate(0, -1em);
+    -ms-transform: translate(0, -1em);
+    transform: translate(0, -1em); }
 
 .home-nav-down {
   position: fixed;
@@ -927,6 +932,11 @@ body.home .nav-wrap {
       bottom: -0.2em; }
   .home-nav-down.active {
     opacity: 1; }
+  .home-nav-down:hover {
+    -webkit-transform: translate(0, 1em);
+    -moz-transform: translate(0, 1em);
+    -ms-transform: translate(0, 1em);
+    transform: translate(0, 1em); }
 
 .projects-container {
   z-index: 9;
@@ -990,7 +1000,7 @@ body.home .nav-wrap {
     width: 100%;
     height: 100%;
     opacity: 0.7;
-    background: url("../img/jpg/assasin.jpg") no-repeat center center;
+    background: url("../img/jpg/home_TVB.jpg") no-repeat center center;
     background-size: auto 100%;
     -webkit-transition: all 600ms ease;
     -moz-transition: all 600ms ease;
