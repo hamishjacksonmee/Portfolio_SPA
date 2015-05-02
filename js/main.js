@@ -100,8 +100,7 @@ $(document).ready(function(){
 
 //     // Images will not begin downloading until we tell the loader to start. 
 //     var loader = new PxLoader(), 
-//         backgroundImg = loader.addImage('img/jpg/assasin.jpg'), 
-//         backgroundImgTwo = loader.addImage('img/jpg/city.jpg');
+//         backgroundImg = loader.addImage('img/jpg/home_TVB.jpg');
      
 //     // callback that will be run once images are ready 
 //     loader.addCompletionListener(function() { 
@@ -306,11 +305,6 @@ function homeScrollDown() {
 
     $('html,body').animate({ scrollTop: y + windowHeight }, 800, 'easeInOutQuint' );
 
-    // if( y < windowHeight) {
-    //     $('.home-nav-up').addClass('hidden');
-    // } else {
-    //     $('.home-nav-up').removeClass('hidden');
-    // };
 };
 function homeScrollUp() {
 
