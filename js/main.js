@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     // Initialize
 
-    // startLoader();  // Initiates Preloader
+    startLoader();  // Initiates Preloader
     setHeight();    // Sets objects to window height
     colorSet();     // Sets theme color
     routerInit();   // Initiate the router
@@ -96,26 +96,26 @@ $(document).ready(function(){
 
 // ----- Preloader
 
-// function startLoader() {
+function startLoader() {
 
-//     // Images will not begin downloading until we tell the loader to start. 
-//     var loader = new PxLoader(), 
-//         backgroundImg = loader.addImage('img/jpg/home_TVB.jpg');
+    // Images will not begin downloading until we tell the loader to start. 
+    var loader = new PxLoader(), 
+        backgroundImg = loader.addImage('img/jpg/home_TVB.jpg');
      
-//     // callback that will be run once images are ready 
-//     loader.addCompletionListener(function() { 
+    // callback that will be run once images are ready 
+    loader.addCompletionListener(function() { 
 
-//         //setTimeout(function() {
-//             $('.global-wrapper.unloaded').removeClass('unloaded');
-//             $('.preloader').addClass('loaded');
-//             console.log("loaded");
-//         //}, 3000);
+        setTimeout(function() {
+            $('.global-wrapper.unloaded').removeClass('unloaded');
+            $('.preloader').addClass('loaded');
+            console.log("loaded");
+        }, 500);
         
-//     });
+    });
 
-//     loader.start();
+    loader.start();
 
-// };
+};
 
 
 
@@ -154,19 +154,19 @@ function preloaderRemove() {
 // ----- View Handling
 
 var homeInit = function () { 
-    $('body').removeClass('symantis right-to-retire the-vital-bowl portfolio-2014 jabber-app ch_ch-employment').addClass('home');
+    $('body').removeClass().addClass('home');
     setTimeout(function(){
         $('#home').addClass('viewing');
     }, 800);
 };
 var thevitalbowlInit = function () { 
-    $('body').removeClass('home right-to-retire symantis portfolio-2014 jabber-app ch_ch-employment').addClass('the-vital-bowl');
+    $('body').removeClass().addClass('the-vital-bowl');
     setTimeout(function(){
         $('#the-vital-bowl').addClass('viewing');
     }, 800);
 };
 var symantisInit = function () { 
-    $('body').removeClass('home right-to-retire the-vital-bowl portfolio-2014 jabber-app ch_ch-employment').addClass('symantis');
+    $('body').removeClass().addClass('symantis');
     setTimeout(function(){
         $('#symantis').addClass('viewing');
     }, 800);
@@ -233,6 +233,30 @@ function routerInit() {
 
 
 
+// ----- Scroll Events
+
+$(window).scroll(function () {
+
+    var scrollTop = $(window).scrollTop();
+    var height = $(window).height();
+
+    if(!$('body').hasClass('home')) {
+        $('.page-circle').css({
+            'transform' : 'translateY('+($(this).scrollTop()/2)+'px'+')',
+            'opacity' : ( 500-scrollTop )/500
+            //((height - scrollTop) / height)
+        });
+    } else {
+        $('.page-circle').css({
+            'transform' : 'translateY('+0+'px'+')',
+            'opacity' : 1
+        }); 
+    }
+
+});
+
+
+
 // ----- Window Height Objects
 
 function setHeight() {
@@ -241,6 +265,7 @@ function setHeight() {
 
     $('.full-height').css('height', windowHeight);
     $('.min-full-height').css('min-height', windowHeight);
+    $('.page-container').css('padding-top', windowHeight/2);
 
 };
   

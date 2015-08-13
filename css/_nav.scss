@@ -30,6 +30,7 @@
 	overflow: hidden;
 	@include border-box;
 	@include card(4);
+	@include trans(600ms);
 
 	h1 {
 		font-style: italic;
