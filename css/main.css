@@ -373,10 +373,6 @@ body {
   line-height: 1.3;
   position: relative; }
   body section {
-    -webkit-transform: translate(-100%, 0);
-    -moz-transform: translate(-100%, 0);
-    -ms-transform: translate(-100%, 0);
-    transform: translate(-100%, 0);
     opacity: 0;
     display: none;
     -webkit-transition: all 1s ease;
@@ -392,10 +388,6 @@ body.right-to-retire #right-to-retire,
 body.portfolio-2014 #portfolio-2014,
 body.jabber-app #jabber-app,
 body.ch_ch-employment #ch_ch-employment {
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  transform: translate(0, 0);
   display: block; }
   body.home #home.viewing,
   body.the-vital-bowl #the-vital-bowl.viewing,
@@ -575,6 +567,9 @@ a:hover, a:active, a:focus {
   border: 4px solid #969696;
   border-right-color: white;
   border-left-color: white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-animation: preloader_wings 1.5s infinite linear;
   -moz-animation: preloader_wings 1.5s infinite linear;
   -ms-animation: preloader_wings 1.5s infinite linear;
@@ -933,10 +928,10 @@ body.home .nav-wrap {
   .home-nav-up.active {
     opacity: 1; }
   .home-nav-up:hover {
-    -webkit-transform: translate(0, -1em);
-    -moz-transform: translate(0, -1em);
-    -ms-transform: translate(0, -1em);
-    transform: translate(0, -1em); }
+    -webkit-transform: translate(0, -10px);
+    -moz-transform: translate(0, -10px);
+    -ms-transform: translate(0, -10px);
+    transform: translate(0, -10px); }
 
 .home-nav-down {
   position: fixed;
@@ -963,10 +958,10 @@ body.home .nav-wrap {
   .home-nav-down.active {
     opacity: 1; }
   .home-nav-down:hover {
-    -webkit-transform: translate(0, 1em);
-    -moz-transform: translate(0, 1em);
-    -ms-transform: translate(0, 1em);
-    transform: translate(0, 1em); }
+    -webkit-transform: translate(0, 10px);
+    -moz-transform: translate(0, 10px);
+    -ms-transform: translate(0, 10px);
+    transform: translate(0, 10px); }
 
 .projects-container {
   z-index: 9;
@@ -983,6 +978,7 @@ body.home .nav-wrap {
     position: relative;
     display: block;
     width: 100%;
+    height: 100%;
     padding: 4em 2em 4em 0;
     list-style: none;
     overflow: hidden;

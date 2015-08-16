@@ -5,7 +5,7 @@ body {
 	position: relative;
 
 	section {
-		@include transform(translate(-100%,0));
+		//@include transform(translate(-100%,0));
 		opacity: 0;
 		display: none;
 		@include trans(1s);
@@ -19,7 +19,7 @@ body.right-to-retire #right-to-retire,
 body.portfolio-2014 #portfolio-2014,
 body.jabber-app #jabber-app,
 body.ch_ch-employment #ch_ch-employment { 
-	@include transform(translate(0,0));
+	//@include transform(translate(0,0));
 	display: block;
 	&.viewing {
 		opacity: 1;

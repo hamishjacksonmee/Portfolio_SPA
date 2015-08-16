@@ -21,6 +21,7 @@ $(document).ready(function(){
         e.preventDefault();
     });
 
+
     // Home nav buttons
 
     $('.slide-top').bind('inview', function(event, isInView) {
@@ -150,6 +151,26 @@ function preloaderRemove() {
 // };
 
 
+// ---- Home Nav
+
+function homeScrollDown() {
+
+    var y = $(window).scrollTop();  //your current y position on the page
+    windowHeight = $(window).innerHeight();
+
+    $('html,body').animate({ scrollTop: y + windowHeight }, 800, 'easeInOutQuint' );
+
+};
+function homeScrollUp() {
+
+    var y = $(window).scrollTop();  //your current y position on the page
+    windowHeight = $(window).innerHeight();
+
+    $('html,body').animate({ scrollTop: y - windowHeight }, 800, 'easeInOutQuint' );
+
+};
+
+
 
 // ----- View Handling
 
@@ -201,9 +222,10 @@ function routerInit() {
     var wrapper = $('html, body');
 
     var scrollTop = function () {
-        setTimeout(function(){
-            wrapper.animate( { scrollTop:0 }, 10);
-        }, 700);
+        // setTimeout(function(){
+        //     wrapper.animate( { scrollTop:0 }, 10);
+        // }, 700);
+        window.scroll(0, 0);
     };
 
     var notViewing = function () {
@@ -321,24 +343,6 @@ function colorSet(){
 };
 
 
-// ---- Home Nav
-
-function homeScrollDown() {
-
-    var y = $(window).scrollTop();  //your current y position on the page
-    windowHeight = $(window).innerHeight();
-
-    $('html,body').animate({ scrollTop: y + windowHeight }, 800, 'easeInOutQuint' );
-
-};
-function homeScrollUp() {
-
-    var y = $(window).scrollTop();  //your current y position on the page
-    windowHeight = $(window).innerHeight();
-
-    $('html,body').animate({ scrollTop: y - windowHeight }, 800, 'easeInOutQuint' );
-
-};
 
 // ---- Menu Button
 
